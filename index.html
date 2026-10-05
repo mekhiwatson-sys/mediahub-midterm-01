@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lorem Ipsum | UX News</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Component 1: Multi-Directional Navigation -->
+    <header class="site-header">
+        <div class="nav-container">
+            <nav class="main-nav" aria-label="Main navigation">
+
+                <a class="brand" href="#" aria-label="The Lorem Ipsum home">
+                    <img
+                        class="brand-logo"
+                        src="images/The Lorem Ipsum Logo_Small Logo - Dark Backgrounds.svg"
+                        alt="The Lorem Ipsum"
+                    >
+                </a>
+
+                <div class="nav-search">
+                    <label class="sr-only" for="site-search">
+                        Search articles
+                    </label>
+
+                    <input
+                        id="site-search"
+                        type="search"
+                        placeholder="Search stories..."
+                    >
+                </div>
+
+                <button
+                    class="direction-toggle"
+                    id="direction-toggle"
+                    type="button"
+                    aria-label="Toggle text direction"
+                >
+                    RTL
+                </button>
+
+                <div class="nav-links">
+                    <a href="#latest">Latest</a>
+                    <a href="#features">Features</a>
+                    <a href="#opinion">Opinion</a>
+                    <a href="#reviews">Reviews</a>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Site Introduction -->
+        <section class="hero">
+
+            <p class="eyebrow">
+                UX NEWS &amp; SATIRE
+            </p>
+
+            <h1>The Lorem Ipsum</h1>
+
+            <p class="hero-tagline">
+                Design Thinking. No Thinking Required.
+            </p>
+
+            <p class="hero-description">
+                Welcome to the parody side of the UX world, where the
+                buttons are always unclickable, the padding is infinite,
+                and everything is a "game-changer."
+            </p>
+
+        </section>
+
+
+        <!-- Component 3: Flexible Filter Form -->
+        <section
+            class="filter-section"
+            aria-labelledby="filter-heading"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    FIND A STORY
+                </p>
+
+                <h2 id="filter-heading">
+                    Explore the newsroom
+                </h2>
+
+            </div>
+
+
+            <form class="filter-form">
+
+                <div class="form-field">
+
+                    <label for="keyword">
+                        Keyword
+                    </label>
+
+                    <input
+                        id="keyword"
+                        name="keyword"
+                        type="text"
+                        placeholder="Search articles"
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                    >
+                        <option value="all">
+                            All categories
+                        </option>
+
+                        <option value="design">
+                            Design Trends
+                        </option>
+
+                        <option value="industry">
+                            Industry News
+                        </option>
+
+                        <option value="career">
+                            Career Advice
+                        </option>
+
+                        <option value="opinion">
+                            Opinion
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="sort">
+                        Sort
+                    </label>
+
+                    <select
+                        id="sort"
+                        name="sort"
+                    >
+                        <option value="latest">
+                            Latest
+                        </option>
+
+                        <option value="popular">
+                            Most Popular
+                        </option>
+
+                        <option value="oldest">
+                            Oldest
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="filter-button"
+                    type="submit"
+                >
+                    Apply Filters
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- GRID 1: Three Article Cards -->
+        <section
+            class="news-section"
+            id="latest"
+            aria-labelledby="latest-heading"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    THE LATEST
+                </p>
+
+                <h2 id="latest-heading">
+                    News from the design world
+                </h2>
+
+            </div>
+
+
+            <div class="article-grid article-grid-three">
+
+                <article class="article-card">
+
+                    <img
+                        src="images/Design Trends.jpg"
+                        alt="Design team reacting to a presentation about Comic Sans"
+                    >
+
+                    <div class="card-category">
+                        Design Trends
+                    </div>
+
+                    <h3>
+                        Is Comic Sans the New Helvetica Neue?
+                    </h3>
+
+                    <p>
+                        A rogue group of senior designers changed their
+                        entire design system to Comic Sans as a joke,
+                        but conversion rates skyrocketed by 400%.
+                    </p>
+
+                    <a
+                        class="card-link"
+                        href="#"
+                    >
+                        Read story
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <img
+                        src="images/Industry News.png"
+                        alt="Product manager presenting requirements to a team"
+                    >
+
+                    <div class="card-category">
+                        Industry News
+                    </div>
+
+                    <h3>
+                        Product Manager Successfully Communicates
+                        Requirement Without Using the Word 'Synergy'
+                    </h3>
+
+                    <p>
+                        History was made when a product manager managed
+                        to brief an engineering team using only plain
+                        English verbs and nouns.
+                    </p>
+
+                    <a
+                        class="card-link"
+                        href="#"
+                    >
+                        Read story
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <img
+                        src="images/Career Advice.png"
+                        alt="Designer explaining button design at a family dinner"
+                    >
+
+                    <div class="card-category">
+                        Career Advice
+                    </div>
+
+                    <h3>
+                        How to Tell Your Parents You Adjust the Width
+                        of Buttons for a Living
+                    </h3>
+
+                    <p>
+                        A guide to explaining your UX career to relatives
+                        who still think you fix computers or draw things
+                        in Photoshop.
+                    </p>
+
+                    <a
+                        class="card-link"
+                        href="#"
+                    >
+                        Read story
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- GRID 2: Two Article Cards -->
+        <section
+            class="news-section"
+            id="opinion"
+            aria-labelledby="opinion-heading"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    OPINION &amp; REVIEWS
+                </p>
+
+                <h2 id="opinion-heading">
+                    Experts have thoughts
+                </h2>
+
+            </div>
+
+
+            <div class="article-grid article-grid-two">
+
+                <article class="article-card">
+
+                    <img
+                        src="images/Op-Ed Headshot.png"
+                        alt="UX executive posing in a modern design office"
+                    >
+
+                    <div class="card-category">
+                        The Op-Ed
+                    </div>
+
+                    <h3>
+                        Why I Fire Any Designer Who Uses a Mouse
+                        Instead of Telepathy
+                    </h3>
+
+                    <p>
+                        Bradley Vane of VibeCheck UX explains why his
+                        agency abandoned traditional input devices for
+                        neuro-synthesized wireframing.
+                    </p>
+
+                    <a
+                        class="card-link"
+                        href="#"
+                    >
+                        Read opinion
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+
+                <article
+                    class="article-card"
+                    id="reviews"
+                >
+
+                    <img
+                        src="images/Product Review.png"
+                        alt="Designer sitting in an unusual ergonomic office chair"
+                    >
+
+                    <div class="card-category">
+                        Product Review
+                    </div>
+
+                    <h3>
+                        The 'Ouroboros' Ergonomic Chair
+                    </h3>
+
+                    <p>
+                        The $4,200 chair promises support for
+                        fourteen-hour Figma marathons with AI-adjusting
+                        lumbar spikes and mandatory Bluetooth.
+                    </p>
+
+                    <a
+                        class="card-link"
+                        href="#"
+                    >
+                        Read review
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- GRID 3: Two Small Cards + Feature -->
+        <section
+            class="news-section"
+            id="features"
+            aria-labelledby="features-heading"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    FEATURED
+                </p>
+
+                <h2 id="features-heading">
+                    Definitely important journalism
+                </h2>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <article class="article-card small-card">
+
+                    <img
+                        src="images/Case Study.png"
+                        alt="Redesigned pastel stop signs at an intersection"
+                    >
+
+                    <div class="card-category">
+                        Case Study
+                    </div>
+
+                    <h3>
+                        We Redesigned the Stop Sign to Be More Inclusive
+                    </h3>
+
+                    <p>
+                        A boutique agency replaced aggressive red with
+                        calming pastel teal. Accidents are now up 600%.
+                    </p>
+
+                    <a
+                        class="card-link"
+                        href="#"
+                    >
+                        Read story
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+
+                <article class="article-card small-card">
+
+                    <img
+                        src="images/Design Trends.jpg"
+                        alt="Design team discussing chaotic typography"
+                    >
+
+                    <div class="card-category">
+                        Design Culture
+                    </div>
+
+                    <h3>
+                        Chaotic-Neutral Typography Has Arrived
+                    </h3>
+
+                    <p>
+                        Designers investigate whether making everything
+                        harder to read actually increases engagement.
+                    </p>
+
+                    <a
+                        class="card-link"
+                        href="#"
+                    >
+                        Read story
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+
+                <article class="article-card feature-card">
+
+                    <img
+                        src="images/Featured Story.png"
+                        alt="Designer living and working inside a futuristic digital apartment"
+                    >
+
+                    <div class="card-category">
+                        Featured Story
+                    </div>
+
+                    <h3>
+                        Figma Announces 'Figma Real Estate,' Allowing
+                        Designers to Live Inside Their Canvases
+                    </h3>
+
+                    <p>
+                        Designers can now convert canvas files into
+                        virtual apartments, allowing them to eat, sleep,
+                        and work without ever exiting the application.
+                    </p>
+
+                    <a
+                        class="card-link"
+                        href="#"
+                    >
+                        Read feature
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <p>
+            The Lorem Ipsum — Design Thinking. No Thinking Required.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

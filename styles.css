@@ -1,0 +1,596 @@
+/* =========================================
+   THE LOREM IPSUM - MEDIA HUB
+   Midterm 01
+   ========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #171717;
+    --paper: #f7f4ed;
+    --surface: #ffffff;
+    --muted: #676767;
+    --accent: #6b4eff;
+    --accent-dark: #4d35d2;
+    --line: #d8d3c8;
+    --soft: #ebe7ff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-block-size: 100vh;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    inline-size: 100%;
+    max-inline-size: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select {
+    outline-offset: 0.2rem;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 0.2rem solid var(--accent);
+}
+
+.sr-only {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =========================================
+   COMPONENT 1 - NAVIGATION
+   ========================================= */
+
+.site-header {
+    background: var(--ink);
+    color: var(--surface);
+    border-block-end: 0.25rem solid var(--accent);
+}
+
+.nav-container {
+    container-type: inline-size;
+    container-name: navigation;
+    inline-size: min(100% - 2rem, 90rem);
+    margin-inline: auto;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+
+.brand {
+    display: block;
+    inline-size: fit-content;
+    text-decoration: none;
+}
+
+.brand img {
+    inline-size: auto;
+    block-size: 7.5rem;
+    max-inline-size: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.nav-search {
+    inline-size: 100%;
+}
+
+.nav-search input {
+    inline-size: 100%;
+    min-block-size: 2.75rem;
+    padding-block: 0.7rem;
+    padding-inline: 0.9rem;
+    border: 0.1rem solid #595959;
+    border-radius: 0.35rem;
+    background: #262626;
+    color: var(--surface);
+}
+
+.nav-search input::placeholder {
+    color: #bdbdbd;
+}
+
+.direction-toggle {
+    min-block-size: 2.75rem;
+    padding-block: 0.6rem;
+    padding-inline: 1rem;
+    border: 0.1rem solid var(--surface);
+    border-radius: 0.35rem;
+    background: transparent;
+    color: var(--surface);
+    cursor: pointer;
+}
+
+.direction-toggle:hover {
+    background: var(--surface);
+    color: var(--ink);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.nav-links a {
+    padding-block: 0.45rem;
+    padding-inline: 0.7rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    background: var(--accent);
+}
+
+
+/* =========================================
+   NAVIGATION CONTAINER QUERY
+   ========================================= */
+
+@container navigation (min-width: 48rem) {
+    .main-nav {
+        display: grid;
+        grid-template-columns: auto minmax(12rem, 1fr) auto;
+        align-items: center;
+        column-gap: 1rem;
+        row-gap: 0.75rem;
+    }
+
+    .brand {
+        grid-row: span 2;
+    }
+
+    .brand img {
+        block-size: 10rem;
+        inline-size: auto;
+    }
+
+    .nav-search {
+        align-self: center;
+    }
+
+    .direction-toggle {
+        justify-self: end;
+    }
+
+    .nav-links {
+        grid-column: 2 / -1;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    inline-size: min(100% - 2rem, 78rem);
+    margin-inline: auto;
+    padding-block: clamp(3rem, 8cqi, 7rem);
+    text-align: start;
+}
+
+.eyebrow {
+    margin-block: 0 0.5rem;
+    color: var(--accent-dark);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-block: 0;
+    max-inline-size: 15ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 10cqi, 7rem);
+    line-height: 0.95;
+}
+
+.hero-tagline {
+    margin-block: 1rem 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.2rem, 4cqi, 2rem);
+    font-style: italic;
+}
+
+.hero-description {
+    max-inline-size: 60ch;
+    margin-block: 1.5rem 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+.filter-section,
+.news-section {
+    inline-size: min(100% - 2rem, 78rem);
+    margin-inline: auto;
+    padding-block: 2.5rem;
+    border-block-start: 0.1rem solid var(--line);
+}
+
+.section-heading {
+    margin-block-end: 1.5rem;
+}
+
+.section-heading h2 {
+    margin-block: 0;
+    max-inline-size: 22ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 5cqi, 3rem);
+    line-height: 1.05;
+}
+
+
+/* =========================================
+   COMPONENT 3 - FILTER FORM
+   ========================================= */
+
+.filter-section {
+    container-type: inline-size;
+    container-name: filters;
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1.25rem;
+    padding-inline: 1.25rem;
+    border: 0.1rem solid var(--line);
+    border-radius: 0.5rem;
+    background: var(--surface);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-inline-size: 0;
+}
+
+.form-field label {
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.form-field input,
+.form-field select {
+    inline-size: 100%;
+    min-block-size: 2.8rem;
+    padding-block: 0.65rem;
+    padding-inline: 0.8rem;
+    border: 0.1rem solid #aaa59b;
+    border-radius: 0.3rem;
+    background: var(--surface);
+    color: var(--ink);
+}
+
+.filter-button {
+    min-block-size: 2.8rem;
+    padding-block: 0.65rem;
+    padding-inline: 1.25rem;
+    border: 0;
+    border-radius: 0.3rem;
+    background: var(--accent);
+    color: var(--surface);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background: var(--accent-dark);
+}
+
+
+/* =========================================
+   FILTER CONTAINER QUERY
+   ========================================= */
+
+@container filters (min-width: 50rem) {
+    .filter-form {
+        display: grid;
+        grid-template-columns:
+            minmax(12rem, 2fr)
+            minmax(10rem, 1fr)
+            minmax(9rem, 1fr)
+            auto;
+        align-items: end;
+    }
+}
+
+
+/* =========================================
+   COMPONENT 2 - ARTICLE GRIDS
+   ========================================= */
+
+.news-section {
+    container-type: inline-size;
+    container-name: articles;
+}
+
+.article-grid,
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+
+/* =========================================
+   GRID 1 AND GRID 2 - CSS SUBGRID
+   ========================================= */
+
+.article-grid-three,
+.article-grid-two {
+    grid-auto-rows:
+        auto
+        auto
+        auto
+        minmax(5.5rem, 1fr)
+        auto;
+}
+
+.article-grid-three .article-card,
+.article-grid-two .article-card {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    gap: 0;
+}
+
+.article-card {
+    overflow: hidden;
+    border: 0.1rem solid var(--line);
+    border-radius: 0.5rem;
+    background: var(--surface);
+}
+
+.article-card img {
+    inline-size: 100%;
+    block-size: 14rem;
+    object-fit: cover;
+    border-block-end: 0.1rem solid var(--line);
+}
+
+.card-category {
+    align-self: end;
+    margin-block: 0;
+    padding-block: 0.9rem 0;
+    padding-inline: 1rem;
+    color: var(--accent-dark);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.article-card h3 {
+    align-self: start;
+    margin-block: 0;
+    padding-block: 0.5rem 0.4rem;
+    padding-inline: 1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    line-height: 1.1;
+}
+
+.article-card p {
+    align-self: start;
+    margin-block: 0;
+    padding-block: 0.6rem 1rem;
+    padding-inline: 1rem;
+    color: var(--muted);
+}
+
+.card-link {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-block-size: 3.5rem;
+    padding-block: 0.8rem;
+    padding-inline: 1rem;
+    border-block-start: 0.1rem solid var(--line);
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.card-link:hover {
+    background: var(--soft);
+    color: var(--accent-dark);
+}
+
+
+/* =========================================
+   ARTICLE GRID CONTAINER QUERIES
+   ========================================= */
+
+/*
+   Grid 1:
+   - narrow = 1 column
+   - medium = 2 columns
+   - wide = 3 columns
+*/
+
+@container articles (min-width: 40rem) {
+    .article-grid-three {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@container articles (min-width: 65rem) {
+    .article-grid-three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/*
+   Grid 2:
+   - narrow = 1 column
+   - wide enough = 2 columns
+*/
+
+@container articles (min-width: 50rem) {
+    .article-grid-two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================
+   GRID 3 - FEATURE GRID
+   ========================================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.feature-grid .article-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-grid .article-card .card-category {
+    padding-block-start: 0.9rem;
+}
+
+.feature-grid .article-card h3 {
+    padding-block-start: 0.5rem;
+}
+
+.feature-grid .article-card p {
+    flex: 1;
+    padding-block: 0.6rem 1rem;
+}
+
+.feature-grid .card-link {
+    margin-block-start: auto;
+}
+
+
+/* =========================================
+   FEATURE GRID CONTAINER QUERIES
+   ========================================= */
+
+@container articles (min-width: 42rem) {
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .feature-card {
+        grid-column: 1 / -1;
+    }
+}
+
+@container articles (min-width: 65rem) {
+    .feature-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            minmax(0, 2fr);
+        align-items: stretch;
+    }
+
+    .feature-card {
+        grid-column: auto;
+    }
+
+    .feature-card img {
+        block-size: 22rem;
+    }
+
+    .small-card img {
+        block-size: 11rem;
+    }
+}
+
+
+/* =========================================
+   RTL
+   ========================================= */
+
+html[dir="rtl"] {
+    direction: rtl;
+}
+
+html[dir="rtl"] .card-link span {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+    margin-block-start: 3rem;
+    padding-block: 2rem;
+    padding-inline: 1rem;
+    border-block-start: 0.25rem solid var(--accent);
+    background: var(--ink);
+    color: var(--surface);
+    text-align: center;
+}
+
+.site-footer p {
+    margin-block: 0;
+}
